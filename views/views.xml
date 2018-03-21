@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+      <!-- location START -->
+        <!-- form -->
+        <record id="view_location_form" model="ir.ui.view">
+          <field name="name">省区表单</field>
+          <field name="model">rw_b_location.location</field>
+          <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group string="基本信息">
+                        <field name="name"/>
+                        <field name="code"/>
+                    </group>
+                </sheet>
+            </form>
+          </field>
+        </record>
+
+        <!-- search -->
+        <record id="view_location_search" model="ir.ui.view">
+          <field name="name">省区列表搜索</field>
+          <field name="model">rw_b_location.location</field>
+          <field name="arch" type="xml">
+            <search>
+              <field name="name"/>
+              <field name="code"/>
+            </search>
+          </field>
+        </record>
+
+        <!-- tree -->
+        <record id="view_location_tree" model="ir.ui.view">
+          <field name="name">省区列表</field>
+          <field name="model">rw_b_location.location</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+              <field name="code"/>
+            </tree>
+          </field>
+        </record>
+
+        <!-- action -->
+        <record id="action_open_view_location_tree" model="ir.actions.act_window">
+          <field name="name">省区动作</field>
+          <field name="res_model">rw_b_location.location</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- menu left -->
+        <menuitem id="menu_main_left_shengqulb" name="省区列表" sequence="301"
+          parent="rw_b_repoweredby.menu_main_left"
+          action="action_open_view_location_tree"/>
+      <!-- location END -->
+
+  </data>
+</odoo>
